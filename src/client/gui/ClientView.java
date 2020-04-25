@@ -48,6 +48,7 @@ public class ClientView extends JFrame implements MyObserver {
        // this.getContentPane().removeAll();
         //initialiseView();
         //initialiseControllers();
+        textAreaConversation.setText("");
         listModel.removeAllElements();
         nameView();
     }
