@@ -190,6 +190,7 @@ public class ClientView extends JFrame implements MyObserver {
             }else if(observerEnum == ObserverEnum.MESSAGE){
                 textAreaConversation.append("\n" + text);
                 textAreaConversation.setCaretPosition(textAreaConversation.getDocument().getLength());
+                textFieldMessage.requestFocus();
             }else if(observerEnum == ObserverEnum.DISCONNECTED){
                 reinitialise();
             }

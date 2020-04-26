@@ -48,7 +48,7 @@ public class Client implements MyObservable {
     public void connect(String name) throws Exception{
 
         int port = 1550;
-        socket = new Socket("192.168.1.4", port);
+        socket = new Socket("192.168.1.7", port);
 
         out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true);
 
