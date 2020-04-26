@@ -45,10 +45,8 @@ public class ClientView extends JFrame implements MyObserver {
     }
 
     private void reinitialise(){
-       // this.getContentPane().removeAll();
-        //initialiseView();
-        //initialiseControllers();
         textAreaConversation.setText("");
+        textFieldMessage.setText("");
         listModel.removeAllElements();
         nameView();
     }
@@ -113,7 +111,6 @@ public class ClientView extends JFrame implements MyObserver {
         textAreaConversation.setLineWrap(true);
         textAreaConversation.setRows(5);
         textAreaConversation.setEditable(false);
-
 
         onlineLabel = new JLabel("Online");
         onlineLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -185,8 +182,10 @@ public class ClientView extends JFrame implements MyObserver {
             String text = (String) o;
             if(observerEnum == ObserverEnum.ADD) {
                 listModel.addElement(text);
+                textAreaConversation.append("\nUser: " + text + " has connected!");
             }else if(observerEnum == ObserverEnum.REMOVE) {
                 listModel.removeElement(text);
+                textAreaConversation.append("\nUser: " + text + " has disconnected!");
             }else if(observerEnum == ObserverEnum.MESSAGE){
                 textAreaConversation.append("\n" + text);
                 textAreaConversation.setCaretPosition(textAreaConversation.getDocument().getLength());
