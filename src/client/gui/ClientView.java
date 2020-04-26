@@ -57,6 +57,7 @@ public class ClientView extends JFrame implements MyObserver {
         this.setBackground(new Color(255,255,255));
         this.setSize(500, 320);
         this.setLocation(220,180);
+        this.setResizable(false);
         this.getContentPane().setLayout(null);
     }
 
