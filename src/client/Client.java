@@ -18,6 +18,7 @@ public class Client implements MyObservable {
     private List<String> users;
     private List<MyObserver> observers;
     private String username;
+    private String address = "192.168.1.7";
     private Socket socket;
     private PrintWriter out;
 
@@ -48,7 +49,8 @@ public class Client implements MyObservable {
     public void connect(String name) throws Exception{
 
         int port = 1550;
-        socket = new Socket("127.0.0.1", port);
+        System.out.println(address);
+        socket = new Socket(address, port);
 
         out = new PrintWriter(new OutputStreamWriter(socket.getOutputStream()),true);
 
